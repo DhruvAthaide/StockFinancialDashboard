@@ -3,7 +3,7 @@
 
 # Stock Financial Dashboard
 
-This is a Project that I created in my free time. I made a simple financial dashboard using Python and the Dash library. The dashboard is designed to display the current stock prices and you can also compare two different stocks.
+This is a Project that I created in my free time. I made a simple financial dashboard using Python and the Brokeh library. The dashboard is designed to display the current stock prices and you can also compare two different stocks.
 
 ## Installation
 
