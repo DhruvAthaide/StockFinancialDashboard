@@ -14,11 +14,6 @@ You can download the zip file or Clone the Project Repository using Git with the
 git clone https://github.com/DhruvAthaide/StockFinancialDashboard.git
 ```
 
-Then open Command Prompt, in the Project Directory and proceed further with whichever Installation you want to go ahead with:
-
-# Stock Predictor - LSTM Model Installation
-
-To Install the Requirements for this Script:
 
 Move the Command Line to the Project Directory:
 
