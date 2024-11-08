@@ -1,4 +1,4 @@
-![Dashboard Image](image/Dashboard.png)
+![Dashboard Image](./Image/Dashboard.png)
 
 
 # Stock Financial Dashboard
