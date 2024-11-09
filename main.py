@@ -134,7 +134,7 @@ load_button = Button(label="Load Data & Plot", button_type="primary", width=200)
 load_button.on_click(on_button_click)
 
 # Improved layout with descriptions and spacing
-header = Div(text="<h2>Stock Comparison Tool</h2><p>Analyze stock data with customizable indicators.</p>")
+header = Div(text="<h2>Stock Financial Dashboard</h2><p>Analyze and Compare two Stocks with Indicators </p>")
 spacer = Spacer(height=20)
 
 # Arrange widgets in a vertical layout with grouping
