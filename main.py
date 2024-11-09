@@ -133,8 +133,24 @@ indicator_choice = MultiChoice(
 load_button = Button(label="Load Data & Plot", button_type="primary", width=200)
 load_button.on_click(on_button_click)
 
+# Header's CSS Styling
+header_style = """
+<style>
+    .header-text {
+        font-size: 24px;
+        font-weight: bold;
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+</style>
+"""
+
 # Improved layout with descriptions and spacing
-header = Div(text="<h2>Stock Financial Dashboard</h2><p>Analyze and Compare two Stocks with Indicators </p>")
+header = Div(
+    text=header_style + "<div class='header-text'>Stock Financial Dashboard</div><p style='text-align:center;'>Analyze and Compare two Stocks with Indicators</p>",
+    stylesheets=[header_style]
+)
 spacer = Spacer(height=20)
 
 # Arrange widgets in a vertical layout with grouping
