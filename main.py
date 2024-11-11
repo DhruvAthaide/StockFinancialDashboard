@@ -10,9 +10,14 @@ from bokeh.models import TextInput, Button, DatePicker, MultiChoice, Div, Spacer
 
 # Function to load stock data for two given tickers within a date range
 def load_data(ticker1, ticker2, start, end):
-    df1 = yf.download(ticker1, start, end)
-    df2 = yf.download(ticker2, start, end)
-    return df1, df2
+    try:
+        df1 = yf.download(ticker1, start=start, end=end)
+        df2 = yf.download(ticker2, start=start, end=end)
+        if df1.empty or df2.empty:
+            raise ValueError(f"Data not found for tickers {ticker1} or {ticker2}")
+        return df1, df2
+    except Exception as e:
+        raise ValueError("Error loading data") from e
 
 # Function to update and generate a plot based on selected data and indicators
 def update_plot(data, indicators, sync_axis=None):
