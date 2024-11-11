@@ -114,8 +114,8 @@ def on_button_click():
     curdoc().add_root(row(p, p2))
 
 # Creating input widgets for user inputs with improved titles and tooltips
-stock1_text = TextInput(title="Main Stock Ticker", placeholder="Enter Main Stock Ticker (e.g., AAPL)")
-stock2_text = TextInput(title="Comparison Stock Ticker", placeholder="Enter Comparison Stock Ticker (e.g., MSFT)")
+stock1_text = TextInput(title="Main Stock Ticker", placeholder="Enter Main Stock Symbol")
+stock2_text = TextInput(title="Comparison Stock Ticker", placeholder="Enter Comparison Stock Symbol")
 date_picker_from = DatePicker(title='Start Date', value="2020-01-01", min_date="2000-01-01", max_date=dt.datetime.now().strftime("%Y-%m-%d"))
 date_picker_to = DatePicker(title='End Date', value=dt.datetime.now().strftime("%Y-%m-%d"), min_date="2000-01-01", max_date=dt.datetime.now().strftime("%Y-%m-%d"))
 
