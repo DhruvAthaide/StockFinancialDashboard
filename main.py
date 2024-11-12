@@ -153,7 +153,7 @@ header_style = """
 
 # Improved layout with descriptions and spacing
 header = Div(
-    text=header_style + "<div class='header-text'>Stock Financial Dashboard</div><p style='text-align:center;'>Analyze and Compare two Stocks with Indicators</p>",
+    text=header_style + "<div class='header-text'>Stock Market Financial Dashboard</div><p style='text-align:center;'>Analyze and Compare two Stocks with Indicators</p>",
     stylesheets=[header_style]
 )
 spacer = Spacer(height=20)
