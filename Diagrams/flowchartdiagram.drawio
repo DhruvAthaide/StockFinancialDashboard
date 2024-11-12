@@ -1,0 +1,66 @@
+<mxfile host="65bd71144e">
+    <diagram id="LYDlJipPYYyIkmA4n6NO" name="Page-1">
+        <mxGraphModel dx="3080" dy="1731" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="6" value="" style="edgeStyle=none;html=1;fontSize=15;fontColor=#2493e3;" edge="1" parent="1" source="2" target="5">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="2" value="&lt;b&gt;&lt;font color=&quot;#2493e3&quot; style=&quot;font-size: 15px;&quot;&gt;Start&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Begin the process with the intial preparations and gather necessary information" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#2493e3;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="30" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;fontColor=#2493e3;" edge="1" parent="1" source="5" target="9">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="&lt;font style=&quot;font-size: 15px;&quot; color=&quot;#2493e3&quot;&gt;&lt;b&gt;Input Stock Tickers&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;User enters stock symbols for two companies required for analysis" style="whiteSpace=wrap;html=1;strokeColor=#2493e3;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="200" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;fontColor=#6fcf97;" edge="1" parent="1" source="9" target="11">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#6fcf97&quot;&gt;Choose Data Range&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;User Specified Start and End Dates for Analysis with Validation Checks" style="whiteSpace=wrap;html=1;strokeColor=#6fcf97;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="380" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" style="edgeStyle=none;html=1;fontSize=15;fontColor=#f2c94c;" edge="1" parent="1" source="11" target="13">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="&lt;font style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#f2c94c&quot;&gt;Select Indicators&lt;/font&gt;&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;User selects Technical Indicators for Analysis. Default to Basic Chart if none selected." style="whiteSpace=wrap;html=1;strokeColor=#f2c94c;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="570" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;fontColor=#f2c94c;" edge="1" parent="1" source="13" target="14">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="&lt;font color=&quot;#f2994a&quot; style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;Fetch Data&lt;br&gt;&lt;/b&gt;&lt;/font&gt;&lt;br&gt;Application retrieves historical prices data via Yahoo Finance API; Errors Handling is done if data is unavailable" style="whiteSpace=wrap;html=1;strokeColor=#f2994a;" vertex="1" parent="1">
+                    <mxGeometry x="338.5" y="760" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" style="edgeStyle=none;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontSize=15;fontColor=#f2994a;" edge="1" parent="1" source="14" target="17">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="&lt;font color=&quot;#f2994a&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Process Data&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;br&gt;Application prepares data, calculating each selected indicator for visualization" style="whiteSpace=wrap;html=1;strokeColor=#f2994a;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="950" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" style="edgeStyle=none;html=1;fontSize=15;fontColor=#f2994a;" edge="1" parent="1" source="17" target="18">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="&lt;font color=&quot;#7f71d8&quot;&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b&gt;Generate Plot&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;/font&gt;&lt;br&gt;System creates and displays the chart with stock data and selected indicators" style="whiteSpace=wrap;html=1;strokeColor=#7f71d8;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="1150" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" style="edgeStyle=none;html=1;fontSize=15;fontColor=#e69247;" edge="1" parent="1" source="18" target="22">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="&lt;span style=&quot;font-size: 15px;&quot;&gt;&lt;b style=&quot;&quot;&gt;&lt;font color=&quot;#7f71d8&quot;&gt;Display Plot&lt;br&gt;&lt;/font&gt;&lt;/b&gt;&lt;/span&gt;&lt;br&gt;User Interacts with the chart, adjusting inputs as needed for new analysis" style="whiteSpace=wrap;html=1;strokeColor=#7f71d8;" vertex="1" parent="1">
+                    <mxGeometry x="338" y="1340" width="175" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="&lt;b&gt;&lt;font color=&quot;#e69247&quot; style=&quot;font-size: 15px;&quot;&gt;End&lt;/font&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;Conclude the process with a fully interactive analysis display" style="ellipse;whiteSpace=wrap;html=1;strokeColor=#e69247;" vertex="1" parent="1">
+                    <mxGeometry x="335" y="1520" width="180" height="110" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="swimlane;startSize=0;strokeColor=#e69247;fontSize=15;fontColor=#e69247;" vertex="1" parent="1">
+                    <mxGeometry x="250" y="20" width="360" height="1650" as="geometry">
+                        <mxRectangle x="250" y="20" width="50" height="40" as="alternateBounds"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
