@@ -1,4 +1,5 @@
-![Dashboard Image](./Image/Dashboard.png)
+![Dashboard Image](./Image/Dashboard.png)<br>
+![Dashboard Lower Image](./Image/DashboardLower.png)
 
 
 # Stock Financial Dashboard
@@ -14,6 +15,8 @@ This is a Project that I created in my free time. I made a simple financial dash
 - **Stock Comparison**: Compare multiple stocks side-by-side to evaluate performance metrics.
 
 - **Technical Indicators**: Calculate and visualize common technical indicators (e.g., moving averages, RSI) to assist in trading decisions.
+
+- **More Visualization Tools**: Added more visualization tools such as heatmaps, scatter plots, and bar charts to provide a more comprehensive view of the Stocks.
 
 - **Responsive Design**: Access the dashboard from various devices with a user-friendly interface.
 
@@ -69,4 +72,3 @@ bokeh serve --show main.py
 - **Improve user experience**: Improve the user experience by making the dashboard more user-friendly and intuitive.
 - **Add more data sources**: Add more data sources such as historical data, economic indicators, and company-specific data to provide a more comprehensive view of the stock market.
 - **Improve data quality of data**: Improve the quality of data by cleaning, processing, and transforming it to make it more accurate and reliable.
-- **Add more visualization tools**: Add more visualization tools such as heatmaps, scatter plots, and bar charts to provide a more comprehensive view of the stock market.
