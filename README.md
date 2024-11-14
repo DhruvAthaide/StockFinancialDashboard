@@ -2,7 +2,7 @@
 ![Dashboard Lower Image](./Image/DashboardLower.png)
 
 
-# Stock Financial Dashboard
+# Stock Market Financial Dashboard
 
 This is a Project that I created in my free time. I made a simple financial dashboard using Python and the Bokeh Python library. The dashboard can display the stock prices of a company over time using Yahoo Finance Python Package, and the user can also add Indicators to help them make better investment decisions. The indicators include 100 Day SMA, 30 Day SMA, Linear Regression Line, 50 Day EMA, RSI, MACD, Bollinger Bands.
 
@@ -28,14 +28,14 @@ To download this Repository
 You can download the zip file or Clone the Project Repository using Git with the below command:
 
 ```bash
-git clone https://github.com/DhruvAthaide/StockFinancialDashboard.git
+git clone https://github.com/DhruvAthaide/StockMarketFinancialDashboard.git
 ```
 
 
 Move the Command Line to the Project Directory:
 
 ```bash
-cd '.\StockFinancialDashboard\'
+cd '.\StockMarketFinancialDashboard\'
 ```
 
 Then Run the following commands to install the Script Requirements:
