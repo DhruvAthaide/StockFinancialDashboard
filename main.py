@@ -94,24 +94,58 @@ def candlestick_plot(data, indicators, sync_axis=None):
     return p
 
 # Additional visualization tools
-def heatmap_plot(data):
+def heatmap_plot(data, stock_color):
     p = figure(title="Heatmap of Daily Returns", tools="pan,box_zoom,reset,save", width=500, height=500)
     data['Returns'] = data['Close'].pct_change() * 100
-    mapper = linear_cmap(field_name='Returns', palette=Viridis256, low=-10, high=10)
-    p.rect(x='Date', y='Returns', width=1, height=1, source=data, fill_color=mapper, line_color=None)
-    color_bar = ColorBar(color_mapper=mapper['transform'], width=8, location=(0,0), ticker=BasicTicker())
+    mapper = linear_cmap(field_name='Returns', palette=stock_color, low=-10, high=10)
+    p.rect(x=data.index, y=0, width=1, height=1, fill_color=mapper, line_color=None)
+    color_bar = ColorBar(color_mapper=mapper['transform'], width=8, location=(0, 0), ticker=BasicTicker())
     p.add_layout(color_bar, 'right')
     return p
 
-def scatter_plot(data):
+def scatter_plot(data, stock_color):
     p = figure(title="Price vs Volume Scatter Plot", x_axis_label="Volume", y_axis_label="Close Price", tools="pan,box_zoom,reset,save", width=500, height=500)
-    p.scatter(data['Volume'], data['Close'], color="navy", alpha=0.5)
+    p.scatter(data['Volume'], data['Close'], color=stock_color, alpha=0.5, legend_label="Scatter")
     return p
 
-def bar_chart(data):
+def bar_chart(data, stock_color):
     p = figure(title="Daily Volume Bar Chart", x_axis_type="datetime", width=1000, height=400)
-    p.vbar(x=data.index, top=data['Volume'], width=0.5, color="blue", legend_label="Volume")
+    p.vbar(x=data.index, top=data['Volume'], width=0.5, color=stock_color, legend_label="Volume")
     return p
+
+# Combining the Plots of the Heatmaps, Scatter Plots and Volume Bars for Both Stocks
+def combined_plots(data1, data2):
+    """Combine Heatmaps, Scatter Plots, and Volume Bars for Two Stocks."""
+    # Combined figure for heatmap
+    heatmap = figure(title="Combined Heatmap of Daily Returns", tools="pan,box_zoom,reset,save", width=800, height=300)
+    
+    # Heatmap for Stock 1
+    data1['Returns'] = data1['Close'].pct_change() * 100
+    mapper1 = linear_cmap(field_name='Returns', palette=Viridis256, low=-10, high=10)
+    heatmap.rect(x='Date', y=0.25, width=1, height=0.2, source=data1, fill_color=mapper1, line_color=None, legend_label="Stock 1")
+    
+    # Heatmap for Stock 2
+    data2['Returns'] = data2['Close'].pct_change() * 100
+    mapper2 = linear_cmap(field_name='Returns', palette=Viridis256[::-1], low=-10, high=10)
+    heatmap.rect(x='Date', y=0.75, width=1, height=0.2, source=data2, fill_color=mapper2, line_color=None, legend_label="Stock 2")
+    heatmap.legend.location = "right"
+    
+    # Combined scatter plot
+    scatter = figure(title="Combined Price vs Volume Scatter Plot", x_axis_label="Volume", y_axis_label="Close Price",tools="pan,box_zoom,reset,save", width=800, height=300)
+    
+    scatter.scatter(data1['Volume'], data1['Close'], color="navy", alpha=0.5, legend_label="Stock 1")
+    scatter.scatter(data2['Volume'], data2['Close'], color="orange", alpha=0.5, legend_label="Stock 2")
+    scatter.legend.location = "top_left"
+    
+    # Combined bar chart
+    bar_chart = figure(title="Combined Daily Volume Bar Chart", x_axis_type="datetime", width=800, height=300)
+    
+    bar_chart.vbar(x=data1.index, top=data1['Volume'], width=0.4, color="blue", legend_label="Stock 1")
+    bar_chart.vbar(x=data2.index, top=data2['Volume'], width=0.4, color="green", legend_label="Stock 2")
+    
+    bar_chart.legend.location = "top_left"
+    
+    return column(heatmap, scatter, bar_chart)
 
 # Callback function to handle button click event and update plots
 def on_button_click():
@@ -122,18 +156,19 @@ def on_button_click():
     indicators = indicator_choice.value
     
     source1, source2 = load_data(main_stock, comparison_stock, start, end)
+    combined = combined_plots(source1, source2)
     p = candlestick_plot(source1, indicators)
     p2 = candlestick_plot(source2, indicators, sync_axis=p.x_range)
-
-    # Additional visualization plots
-    heatmap = heatmap_plot(source1)
-    scatter = scatter_plot(source1)
-    bar = bar_chart(source1)
 
     # Clear previous elements in the document and add the layout and updated plots
     curdoc().clear()
     curdoc().add_root(layout)
-    curdoc().add_root(column(row(p, p2), row(heatmap, scatter, bar)))
+    curdoc().add_root(
+        column(
+            row(p, p2), # Calling the Stock Data
+            row(combined) # Calling the Heatmap, Scatter Plot and Volume Plots
+        )
+    )
 
 # Creating input widgets for user inputs
 stock1_text = TextInput(title="Main Stock Ticker", placeholder="Enter Main Stock Symbol")
